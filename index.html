@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>School Admissions</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>School Admissions</h1>
+    <p>Admissions staff can manage applicants and view application statistics.</p>
+    <p class="notice">Mockup with sample data. Changes last until the page is refreshed.</p>
+
+    <section>
+      <h2 id="form-heading">Add applicant</h2>
+      <form id="applicant-form">
+        <label>Name <input name="name" required></label>
+        <label>Contact address <input name="address" required></label>
+        <label>Applied degree <input name="degree" required></label>
+        <label>Level
+          <select name="level"><option>Undergraduate</option><option>Graduate</option></select>
+        </label>
+        <label>Application year <input name="year" type="number" min="1900" max="2100" value="2026" required></label>
+        <label>Test
+          <select name="test"><option>SAT</option><option>TOEFL</option><option>GRE</option></select>
+        </label>
+        <label>Test score <input name="score" type="number" min="0" step="any" required></label>
+        <label>Status
+          <select name="status"><option>Pending</option><option>Accepted</option><option>Rejected</option></select>
+        </label>
+        <div class="actions"><button type="submit" id="save">Add applicant</button> <button type="button" id="cancel" hidden>Cancel edit</button></div>
+      </form>
+    </section>
+
+    <section>
+      <h2>Applicants</h2>
+      <label>Search by name, address, or degree <input id="search" type="search"></label>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Name</th><th>Contact address</th><th>Degree</th><th>Level</th><th>Year</th><th>Test score</th><th>Status</th><th></th></tr></thead>
+        <tbody id="applicants"></tbody>
+      </table></div>
+      <p id="empty" hidden>No applicants found.</p>
+    </section>
+
+    <section>
+      <h2>Statistics</h2>
+      <label>Application year
+        <select id="stats-year"></select>
+      </label>
+      <p id="summary"></p>
+      <h3>Average test scores by level</h3>
+      <p>Scores are grouped by test type.</p>
+      <ul id="averages"></ul>
+    </section>
+  </main>
+</body>
+</html>
