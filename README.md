@@ -34,6 +34,14 @@ The backend hasn't been built yet. The frontend does its own searching and calcu
 
 The SQL files in `database/` are a draft based on our nine-table whiteboard diagram. We still need to build a server and agree on how the frontend will send and receive data. Database credentials should stay on the server, outside the browser code.
 
+
+
+## Database Structure
+
+The E-R Diagram specifies the entities, their attributes, and their relations to be followed by the MySQL schema.
+
+![E-R Diagram](images/diagram.png)
+
 ## MySQL setup
 
 You'll need MySQL Server 8.0.16 or later and an account that can create a database and tables. To try the scripts in MySQL Workbench:
@@ -46,10 +54,9 @@ You'll need MySQL Server 8.0.16 or later and an account that can create a databa
    ```
 
    If a database with that name already exists, choose another name so you don't run the scripts against existing data.
-
-2. Open `database/schema.sql`, make sure the new database is selected as the default schema, and run the script. This creates the nine tables.
-3. Open and run `database/seed.sql` once against the same database. If an insert fails, stop execution and run `ROLLBACK;` in the same session before fixing it. Don't continue to `COMMIT;`.
-4. Open and run `database/queries.sql` to try the search and statistics queries. You can change `@search` and the year in the file.
+1. Open `database/schema.sql`, make sure the new database is selected as the default schema, and run the script. This creates the nine tables.
+1. Open and run `database/seed.sql` once against the same database. If an insert fails, stop execution and run `ROLLBACK;` in the same session before fixing it. Don't continue to `COMMIT;`.
+1. Open and run `database/queries.sql` to try the search and statistics queries. You can change `@search` and the year in the file.
 
 With the sample data, the 2026 results should show three applications, one acceptance, a 33.3% admission rate, an undergraduate SAT average of 1360.00, and a graduate GRE average of 320.00.
 
