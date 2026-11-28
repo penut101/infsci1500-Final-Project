@@ -1,0 +1,1 @@
+// Catch MySQL errors

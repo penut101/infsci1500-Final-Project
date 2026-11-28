@@ -34,8 +34,6 @@ The backend hasn't been built yet. The frontend does its own searching and calcu
 
 The SQL files in `database/` are a draft based on our nine-table whiteboard diagram. We still need to build a server and agree on how the frontend will send and receive data. Database credentials should stay on the server, outside the browser code.
 
-
-
 ## Database Structure
 
 The E-R Diagram specifies the entities, their attributes, and their relations to be followed by the MySQL schema.
